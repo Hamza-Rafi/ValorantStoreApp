@@ -1,0 +1,78 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.screen{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+
+  flex-direction: column;
+
+  background-position: center center;
+  background-size: cover;
+}
+.container{
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+
+}
+.items{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.shopItem{
+  margin: 1rem;
+  /* display: flex; */
+  text-align: center;
+
+}
+
+.itemImage{
+  height: 10vh;
+  object-fit: cover;
+}
+.closeButton{
+  position: absolute;
+
+  top: 0%;
+  right: 0%;
+
+  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.closeButton img{
+  pointer-events: none;
+}
+.closeButton:hover{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.loaderContainer{
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+.loader{
+  border: 16px solid  #808080;
+  border-top: 16px solid #000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}   
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
