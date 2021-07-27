@@ -18,5 +18,5 @@ An app that displays your valorant store
 - When you run the app (bear with it it will take a couple of seconds), a window will launch into the middle of your screen.
 - To close the app simply press the 'X' icon in the top right corner
 - The app will now minimise to the system tray.
-- To reopen the app, double click the system tray icon or eight click the system tray icon and click on `Open App`
+- To reopen the app, double click the system tray icon or right click the system tray icon and click on `Open App`
 - To quit the app, right click the system tray icon and choose the `Quit` option.
