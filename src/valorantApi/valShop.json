@@ -1,0 +1,34 @@
+{
+    "skins": [
+        {
+            "uuid": "9dbc52e2-4889-cbe5-b874-4f8f0f8f3781",
+            "displayName": "Silvanus Sheriff",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/9dbc52e2-4889-cbe5-b874-4f8f0f8f3781/displayicon.png"
+        },
+        {
+            "uuid": "4538bff7-470c-889c-9875-7ba3ebf87c87",
+            "displayName": "Convex Sheriff",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/4538bff7-470c-889c-9875-7ba3ebf87c87/displayicon.png"
+        },
+        {
+            "uuid": "291cb44a-410d-b035-4d0b-608a92c2cd91",
+            "displayName": "VALORANT GO! Vol. 1 Spectre",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/291cb44a-410d-b035-4d0b-608a92c2cd91/displayicon.png"
+        },
+        {
+            "uuid": "9dc0bdd7-4d88-9360-38d6-3ea62b1daaca",
+            "displayName": "Prime//2.0 Phantom",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/9dc0bdd7-4d88-9360-38d6-3ea62b1daaca/displayicon.png"
+        }
+    ],
+    "timeStampToRefresh": {
+        "date": {
+            "day": 4,
+            "month": 7
+        },
+        "time": {
+            "hours": 1,
+            "minutes": 0
+        }
+    }
+}
