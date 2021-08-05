@@ -1,29 +1,29 @@
 {
     "skins": [
         {
-            "uuid": "9dbc52e2-4889-cbe5-b874-4f8f0f8f3781",
-            "displayName": "Silvanus Sheriff",
-            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/9dbc52e2-4889-cbe5-b874-4f8f0f8f3781/displayicon.png"
+            "uuid": "5c273d0e-47fa-bb8c-d914-728de95da30e",
+            "displayName": "Elderflame Operator",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/5c273d0e-47fa-bb8c-d914-728de95da30e/displayicon.png"
         },
         {
-            "uuid": "4538bff7-470c-889c-9875-7ba3ebf87c87",
-            "displayName": "Convex Sheriff",
-            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/4538bff7-470c-889c-9875-7ba3ebf87c87/displayicon.png"
+            "uuid": "9d501eec-4084-5d44-32ef-6e8ed5b0ed49",
+            "displayName": "Silvanus Vandal",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/9d501eec-4084-5d44-32ef-6e8ed5b0ed49/displayicon.png"
         },
         {
-            "uuid": "291cb44a-410d-b035-4d0b-608a92c2cd91",
-            "displayName": "VALORANT GO! Vol. 1 Spectre",
-            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/291cb44a-410d-b035-4d0b-608a92c2cd91/displayicon.png"
+            "uuid": "167481de-4732-b44a-06ad-938625015abe",
+            "displayName": "Prime//2.0 Karambit",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/167481de-4732-b44a-06ad-938625015abe/displayicon.png"
         },
         {
-            "uuid": "9dc0bdd7-4d88-9360-38d6-3ea62b1daaca",
-            "displayName": "Prime//2.0 Phantom",
-            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/9dc0bdd7-4d88-9360-38d6-3ea62b1daaca/displayicon.png"
+            "uuid": "7bfab387-4e97-d815-4488-c491e3a5520c",
+            "displayName": "Reaver Operator",
+            "displayIcon": "https://media.valorant-api.com/weaponskinlevels/7bfab387-4e97-d815-4488-c491e3a5520c/displayicon.png"
         }
     ],
     "timeStampToRefresh": {
         "date": {
-            "day": 4,
+            "day": 6,
             "month": 7
         },
         "time": {

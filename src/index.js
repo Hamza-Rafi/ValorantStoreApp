@@ -2,7 +2,6 @@ const { app, BrowserWindow, ipcMain } = require("electron")
 const path = require('path')
 const { exec } = require('child_process')
 const fs = require('fs')
-const { time } = require("console")
 
 let win
 
@@ -39,37 +38,49 @@ ipcMain.on('win:max', (evt, arg) => {
 
 
 function getStore(){
-    var pythonPath = path.join(__dirname, 'valorantApi/getValShop.py')
-    exec(`python "${pythonPath}"`, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`exec error: ${error}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        console.error(`stderr: ${stderr}`);
-
-        // Set timestamp in file
-        fileData = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/valShop.json')))
-
-        var timeNow = new Date(Date.now()) 
-        var nextDay = new Date()
-        nextDay.setDate(timeNow.getDate() + 1)
-
-        var timeStampToRefresh = {
-            "date": {
-                "day": nextDay.getDate(),
-                "month": nextDay.getMonth()
-            },
-            "time": {
-                "hours": 1,
-                "minutes": 0
+    return new Promise((resolve, reject) => {
+        var pythonPath = path.join(__dirname, 'valorantApi/getValShop.py')
+        exec(`python "${pythonPath}"`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`exec error: ${error}`);
+                return;
             }
-        }
+            
+            console.log(`stdout: ${stdout}`);
 
-        fileData['timeStampToRefresh'] = timeStampToRefresh
+            if(stderr){
+                console.error(`stderr: ${stderr}`);
+            }
+            // JSONIFY
+            stdout = stdout.replaceAll(`'`, `"`)
+            var store = JSON.parse(stdout)
+    
+            // Save store and timnestamp to file
+            let fileData = {}
+    
+            var timeNow = new Date(Date.now()) 
+            var nextDay = new Date()
+            nextDay.setDate(timeNow.getDate() + 1)
+    
+            var timeStampToRefresh = {
+                "date": {
+                    "day": nextDay.getDate(),
+                    "month": nextDay.getMonth()
+                },
+                "time": {
+                    "hours": 1,
+                    "minutes": 0
+                }
+            }
+    
+            fileData['skins'] = store
+            fileData['timeStampToRefresh'] = timeStampToRefresh
+    
+            fs.writeFileSync(path.join(__dirname, 'valorantApi/valShop.json'), JSON.stringify(fileData, null, 4))
 
-        fs.writeFileSync(path.join(__dirname, 'valorantApi/valShop.json'), JSON.stringify(fileData, null, 4))
-
+            resolve(store)
+    
+        })
         
     })
 }
@@ -94,22 +105,34 @@ function isNewStore(){
         currentTime.time.hours >= timeStampToRefresh.time.hours &&
         currentTime.date.day >= timeStampToRefresh.date.day
     ){
+        console.log('true')
         return true
     }
     else{
+        console.log('false')
         return false
     }
 }
 
 ipcMain.on('store:req', () => {
+    let skins
+    let username
+
     if(isNewStore()){
-        getStore()
+        getStore().then(store => {
+            skins = store
+            username = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/config.json')))['USERNAME']
+        
+            win.webContents.send('store:res', skins, username)
+        })
+    }
+    else{
+        skins = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/valShop.json')))['skins']
+        username = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/config.json')))['USERNAME']
+
+        win.webContents.send('store:res', skins, username)
     }
 
-    const skins = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/valShop.json')))['skins']
-    let username = JSON.parse(fs.readFileSync(path.join(__dirname, 'valorantApi/config.json')))['USERNAME']
-
-    win.webContents.send('store:res', skins, username)
 })
 
 ipcMain.on('bg:req', () => {

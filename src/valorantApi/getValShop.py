@@ -38,7 +38,4 @@ def getValShop(username, password):
 
 valShop = getValShop(config['USERNAME'], config['PASSWORD'])
 
-valShopPath = os.path.join(dir_path, 'valShop.json')
-with open(valShopPath, 'w') as f:
-
-    json.dump({"skins": valShop}, f, indent=4)
+print(valShop)
