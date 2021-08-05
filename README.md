@@ -3,7 +3,7 @@ A desktop app that displays your valorant store.
 
 ## How to install
 - Make sure MongoDB Community Server is installed on your machine. Install from [here](https://www.mongodb.com/try/download/community).
-- Install the latest release of [Valorant Store App](https://github.com/HamuzaDesu/ValorantStoreApp/releases/tag/1.1.0) and unzip the file.
+- Install the latest release of [Valorant Store App](https://github.com/HamuzaDesu/ValorantStoreApp/releases/latest) and unzip the file.
 - put the `valorantstoreapp-win32-x64` folder in a safe place (Documents file or something)
 - Navigate to `valorantstoreapp-win32-x64/resources/app/src` in CMD
 - Install python modules by running `pip -r install pythonRequirements.txt`
