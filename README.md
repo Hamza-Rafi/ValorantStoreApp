@@ -1,5 +1,6 @@
 # Valorant Store App
 A desktop app that displays your valorant store.
+# WILL BE DOING A MAJOR REWORK SOON!!!
 
 ## How to install
 - Make sure MongoDB Community Server is installed on your machine. Install from [here](https://www.mongodb.com/try/download/community).
